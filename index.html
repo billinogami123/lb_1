@@ -5,21 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css">
   <title>Лабораторная №1</title>
-<script type="text/javascript" >
-  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-  m[i].l=1*new Date();
-  for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-  k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-  (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+  <script type="text/javascript">
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();
+    for (var j = 0; j < document.scripts.length; j++) {
+      if (document.scripts[j].src === r) { return; }
+    }
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-  ym(101258962, "init", {
-       clickmap:true,
-       trackLinks:true,
-       accurateTrackBounce:true,
-       webvisor:true
-  });
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/101258962" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    ym(101258962, "init", {
+      clickmap:true,
+      trackLinks:true,
+      accurateTrackBounce:true,
+      webvisor:true
+    });
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/101258962" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 </head>
 <body>
   <header>
@@ -28,7 +30,7 @@
 
   <main>
     <p>Нажмите на кнопку ниже, чтобы выполнить целевое действие:</p>
-    <button id="targetButton" onclick="reachGoal()">Нажми меня</button>
+    <button id="targetButton">Нажми меня</button>
   </main>
 
   <footer>
@@ -37,15 +39,12 @@
       <a href="privacy.html" target="_blank">политике конфиденциальности</a>.
     </p>
   </footer>
+
   <script>
-    function reachGoal() {
-      if (typeof yaCounter101258962 !== 'undefined') {
-        yaCounter101258962.reachGoal('click_button');
-        alert('Цель отправлена!');
-      } else {
-        alert('Метрика не подключена!');
-      }
-    }
+    document.getElementById("targetButton").addEventListener("click", function () {
+      ym(101258962, 'reachGoal', 'button_click'); 
+      alert("Цель отправлена!");
+    });
   </script>
 </body>
 </html>
