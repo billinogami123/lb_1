@@ -32,6 +32,15 @@
     <p>Нажмите на кнопку ниже, чтобы выполнить целевое действие:</p>
     <button id="targetButton">Нажми меня</button>
   </main>
+  <section>
+    <h2>Обратная связь</h2>
+    <form id="feedbackForm">
+      <label for="feedbackInput">Ваш отзыв:</label><br>
+      <textarea id="feedbackInput" rows="4" cols="50" placeholder="Напишите здесь..."></textarea><br>
+      <button type="submit">Отправить</button>
+    </form>
+  </section>
+  
 
   <footer>
     <p>
@@ -45,6 +54,19 @@
       ym(101258962, 'reachGoal', 'targetButton'); 
       alert("Цель отправлена!");
     });
+
+    document.getElementById("feedbackForm").addEventListener("submit", function (e) {
+      e.preventDefault(); 
+      const text = document.getElementById("feedbackInput").value.trim();
+      if (text !== "") {
+        ym(101258962, 'reachGoal', 'feedbackSent'); 
+        alert("Спасибо за обратную связь!");
+        document.getElementById("feedbackInput").value = ""; 
+      } else {
+        alert("Пожалуйста, заполните поле отзыва.");
+      }
+    });
+    
   </script>
 </body>
 </html>
